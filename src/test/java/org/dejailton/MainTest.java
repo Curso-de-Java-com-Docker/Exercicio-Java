@@ -1,9 +1,10 @@
 package org.dejailton.sistemaregistrador;
-import org.dejailton.sistemaregistrador.Main;
+
+import org.dejailton.sistemaregistrador.ClientTest;
 
 public class MainTest {
 	public static void main (String[] args) {
-		Main.main(new String[4]);	
+		ClientTest.test();
 	}
 }
 
