@@ -4,7 +4,7 @@ import org.dejailton.sistemaregistrador.Client;
 
 class ClientTest {
 	public static void test () {
-		System.out.print("test 1...\t");
+		System.out.print("test 1 \t Client...\t");
 		String name = "Jonas";
 		String cpf = "23158937500";
 		int bornYear = 2005;
