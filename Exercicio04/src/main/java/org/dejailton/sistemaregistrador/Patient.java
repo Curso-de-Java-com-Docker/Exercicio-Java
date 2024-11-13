@@ -6,7 +6,6 @@ class Patient {
 	String birthdate;
 	char gender;
 
-
 	public Patient(String name, String cpf, String birthdate, char gender) {
 		this.name = name;
 		this.cpf = cpf;
@@ -26,4 +25,18 @@ class Patient {
 	public char getGender() {
 		return this.gender;
 	}
+
+	public static readonly Patient NULL = new NullPatient();
+
+	private class NullPatient extends Pantient {
+		NullPatient () {
+			super(null, null, null, null);
+		}
+		@override
+		getName () {}
+		getCpf() {}
+		getBirthDate() {}
+		getGender() {}
+	}
 }
+
