@@ -26,17 +26,16 @@ class Patient {
 		return this.gender;
 	}
 
-	public static readonly Patient NULL = new NullPatient();
+	public static Patient NULL = new NullPatient();
 
-	private class NullPatient extends Pantient {
+	private class NullPatient extends Patient {
 		NullPatient () {
 			super(null, null, null, null);
 		}
-		@override
-		getName () {}
-		getCpf() {}
-		getBirthDate() {}
-		getGender() {}
+		@Override void getName () {}
+		void getCpf() {}
+		void getBirthDate() {}
+		void getGender() {}
 	}
 }
 
