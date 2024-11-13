@@ -25,7 +25,7 @@ public class LiteDriverTest {
 		{
 			String wrongCpf = "123";
 			Patient receivedPatient = LiteDriver.getPatientByCpf(wrongCpf);
-			assert(receivedPatient == Patient.NULL) : "Result must be nullPatient";
+			assert(receivedPatient.getIsNull()) : "Result must be nullPatient";
 		}
 		System.out.println("OK");	
 	}
