@@ -1,7 +1,7 @@
 package org.dejailton.sistemaregistrador;
 import org.dejailton.sistemaregistrador.Patient;
 import java.sql.Connection;
-import java.sql.Driver manager;
+import java.sql.Driver.manager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
