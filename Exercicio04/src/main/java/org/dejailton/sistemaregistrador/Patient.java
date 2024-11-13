@@ -1,12 +1,12 @@
 package org.dejailton.sistemaregistrador;
 
 class Patient {
-	String name;
-	String cpf;
-	String birthdate;
-	char gender;
-	boolean isNull;
-	public static boolean NULL = true;
+	private String name;
+	private String cpf;
+	private String birthdate;
+	private char gender;
+	private boolean isNull;
+	private static boolean NULL = true;
 
 	public Patient() {
 		this.isNull = true;

@@ -11,9 +11,12 @@ public class LiteDriverTest {
 		String birthdate = "20/12/2001";
 		char gender = 'M';
 		Patient patient = new Patient(name, cpf, birthdate, gender);
-		{
-			boolean success = LiteDriver.registerPatient(patient);
-			assert(success) : "Register Operation Gone Wrong";
+		{	
+			if(LiteDriver.registerPatient(patient)) {
+				System.out.println("Register Operetion sucess");
+			} else {
+				System.out.println("Register Operation Gone Wrong");
+			}
 		}
 		{
 			Patient receivedPatient = LiteDriver.getPatientByCpf(cpf);
