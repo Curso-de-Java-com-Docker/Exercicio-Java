@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class LiteDriver {
-
 	public static void registerPatient(Patient patient) {
 		Connection connection = null;
 		try {
@@ -30,6 +29,7 @@ public class LiteDriver {
 			}
 		}
 	}
+
 	public static void getPatientByCpf(String wrongCpf) {
 		Connection connection = null;
 		try {
