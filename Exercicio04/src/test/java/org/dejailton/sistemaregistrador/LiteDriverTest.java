@@ -12,7 +12,7 @@ public class LiteDriverTest {
 		char gender = 'M';
 		Patient patient = new Patient(name, cpf, birthdate, gender);
 		{
-			bool success = LiteDriver.registerPatient(patient);
+			boolean success = LiteDriver.registerPatient(patient);
 			assert(success) : "Register Operation Gone Wrong";
 		}
 		{
