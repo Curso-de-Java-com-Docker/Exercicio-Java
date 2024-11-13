@@ -32,7 +32,7 @@ class Patient {
 		NullPatient () {
 			super(null, null, null, null);
 		}
-		@Override void getName () {}
+		void getName () {}
 		void getCpf() {}
 		void getBirthDate() {}
 		void getGender() {}
