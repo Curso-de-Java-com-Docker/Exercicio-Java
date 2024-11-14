@@ -1,5 +1,6 @@
 package org.dejailton.sistemaregistrador;
 
+import org.dejailton.sistemaregistrador.NullPatient;
 import org.dejailton.sistemaregistrador.Patient;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -51,7 +52,7 @@ public class LiteDriver {
 				String cpf = patientReturnSet.getString("cpf");
 				String birthdate = patientReturnSet.getString("birthdate");
 				char gender = patientReturnSet.getString("gender").charAt(0);
-				patient = new Patient(name, cpf, birthdate, gender);
+				patient = PessoaFactory.createPatient(name, cpf, birthdate, gender);
 			} else if (patientReturnSet.getFetchSize() > 1) {
 				throw new Exception("Expected an unique result for cpf, but got multiple");
 			} else {

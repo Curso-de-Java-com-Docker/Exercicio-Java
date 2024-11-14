@@ -1,40 +1,40 @@
 package org.dejailton.sistemaregistrador;
 
 class Patient {
-	private String name;
-	private String cpf;
-	private String birthdate;
-	private char gender;
-	private boolean isNull;
-	private static boolean NULL = true;
+	protected String name;
+	protected String cpf;
+	protected String birthdate;
+	protected char gender;
 
 	public Patient() {
-		this.isNull = true;
 	}
-
 	public Patient(String name, String cpf, String birthdate, char gender) {
 		this.name = name;
 		this.cpf = cpf;
 		this.birthdate = birthdate;
 		this.gender = gender;
-		this.isNull = false;
 	}
-
-	public boolean getIsNull () {
-		return this.isNull;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-	public String getCpf() {
+	public abstract String getName();
+	public abstract String getCpf() {
 		return this.cpf;
 	}
-	public String getBirthDate() {
+	public abstract String getBirthDate() {
 		return this.birthdate;
 	}
-	public char getGender() {
+	public abstract char getGender() {
 		return this.gender;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public void setBirthDate(String birthdate) {
+		this.birthdate = birthdate;
+	}
+	public void setGender(char gender) {
+		this.gender = gender;
 	}
 }
 
