@@ -7,6 +7,7 @@ public class MainTest {
 		System.out.println("Starting Automated Tests...");
 		ClientTest.test();
 		PatientTest.test();
+		FormaterTest.test();
 		System.out.println("End of Automated Tests...");
 	}
 }
