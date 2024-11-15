@@ -1,7 +1,7 @@
 package org.dejailton.sistemaregistrador;
 
-class Patient {
-	protected String name;
+abstract class Patient {
+	static protected String name;
 	protected String cpf;
 	protected String birthdate;
 	protected char gender;

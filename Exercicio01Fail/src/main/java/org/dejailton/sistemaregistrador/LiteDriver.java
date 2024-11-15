@@ -37,7 +37,7 @@ public class LiteDriver {
 	}
 
 	public static Patient getPatientByCpf(String wrongCpf) {
-		Patient patient = new Patient();
+		Patient patient = Patient.createPatient();
 		Connection connection = null;
 		try {
 			connection = DriverManager.getConnection("jdbc:sqlite:base.db");
@@ -60,7 +60,7 @@ public class LiteDriver {
 			}
 		} catch(Exception e) {
 			System.err.println(e.getMessage());
-			patient = new Patient();
+			patient = Patient.createPatient();
 		} finally {
 			try {
 				if(connection != null) {

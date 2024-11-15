@@ -4,13 +4,14 @@ import org.dejailton.sistemaregistrador.NullPatient;
 
 public class PatientFactory {
 	public static Patient createPatient(String name, String cpf, String birthdate, char gender) {
-		Patient patient = new Patient();
+		Nullpatient patientresponse = new NullPatient();
+		NullPatient patient = new NullPatient();
 		String namefactory = name;
 		String cpffactory = cpf;
 		String birthdatefactory = birthdate;
 		char genderfactory = gender;
 		if (namefactory == null) {
-			patient.setName(NullPatient.getName());
+			patient.setName(patientresponse.getName());
 		} else {
 			patient.setName(namefactory);
 		}

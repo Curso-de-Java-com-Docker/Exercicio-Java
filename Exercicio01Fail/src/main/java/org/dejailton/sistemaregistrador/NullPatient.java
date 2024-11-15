@@ -2,8 +2,14 @@ package org.dejailton.sistemaregistrador;
 import org.dejailton.sistemaregistrador.Patient;
 
 public class NullPatient extends Patient{
+	public NullPatient() {
+		super();
+	}
+	
+	
 	@Override
-	public static String getName() {
+	public String getName() {
+		String nameresponse;
 		if (Patient.name == null) {
 			String nameresponse = "This name was not found";
 		} else {
