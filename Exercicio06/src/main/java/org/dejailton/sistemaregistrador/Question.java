@@ -11,6 +11,8 @@ class Question {
 	public Question (String text) {
 		this.text = text;
 	}
+	public Question(Question question) {
+	}
 	public Question () {
 	}
 	public String getText() {

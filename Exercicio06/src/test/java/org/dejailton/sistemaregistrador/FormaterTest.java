@@ -34,3 +34,4 @@ class FormaterTest {
 		System.out.println("OK");	
 	}
 }
+
