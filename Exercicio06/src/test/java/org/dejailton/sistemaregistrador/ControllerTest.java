@@ -1,60 +1,81 @@
 package org.dejailton.sistemaregistrador;
 
 import org.dejailton.sistemaregistrador.Controller;
+import org.dejailton.sistemaregistrador.RobotMessage;
 
 class ControllerTest {
-	public static void test() {
-		System.out.print("test 4 \t Controller...\t");
+	public static void test () {
+		System.out.print("test 5 \t Controller...\t");
 		Controller controller = new Controller();
-		Answer answer;
+		UserMessage answer;
+		RobotMessage question;
 		{		
 			String output = controller.init();
 			String expected = "Welcome to sistemaregistrador!";
 			assert(expected.equals(output)) : "Welcome message is wrong!";
 		}
 		{
-			Question question;
-			question = new Question(controller.nextQuestion());
+			question = controller.nextRobotMessage();
 			String output = question.getText();
 			String expected = "Select operation [1] Register [2] Query";
 			assert(expected.equals(output)) : "Controller options is wrong!";
-			answer = new Answer(1); 
+			answer = new UserMessage(1); 
 			controller.answer(answer);
 		}
 		{
-			Question question;
-			question = new Question(controller.nextQuestion());
+			question = controller.nextRobotMessage();
 			String output = question.getText();
 			String expected = "Name: ";
 			assert(expected.equals(output)) : "Name question is not valid";
-			answer = new Answer("José");
+			answer = new UserMessage("João");
 			controller.answer(answer);			
 		}
 		{
-			String question = controller.nextQuestion();
+			question = controller.nextRobotMessage();
+			String output = question.getText();
 			String expected = "Cpf: ";
-			assert(expected.equals(question)) : "CPF question is not valid";
-			String answer = "82998289221";
+			assert(expected.equals(output)) : "CPF question is not valid";
+			answer = new UserMessage("82998289221");
 			controller.answer(answer);
 		}
 		{
-			String question = controller.nextQuestion();
+			question = controller.nextRobotMessage();
+			String output = question.getText();
 			String expected = "Birth date: ";
-			assert(expected.equals(question)) : "Birth date question is not valid";
-			String answer = "27/09/2000";
+			assert(expected.equals(output)) : "Birth date question is not valid";
+			answer = new UserMessage("27/09/2000");
 			controller.answer(answer);
 		}
 		{
-			String question = controller.nextQuestion();
+			question = controller.nextRobotMessage();
+			String output = question.getText();
 			String expected = "Gender: ";
-			assert(expected.equals(question)) : "Gender question is not valid";
-			char answer = 'M';
+			assert(expected.equals(output)) : "Gender question is not valid";
+			answer = new UserMessage('M');
 			controller.answer(answer);
 		}
 		{
-			String question = controller.nextQuestion();
+			question = controller.nextRobotMessage();
+			String output = question.getText();
 			String expected = "Done with success!";
-			assert(expected.equals(question)) : "Register failled!";
+			assert(expected.equals(output)) : "Register failled!";
+		}
+		{
+			question = controller.nextRobotMessage();
+			String output = question.getText();
+			String expected = "Select operation [1] Register [2] Query";
+			assert(expected.equals(output)) : "Controller options is wrong!";
+			answer = new UserMessage(2); 
+			controller.answer(answer);
+		}
+		{
+			question = controller.nextRobotMessage();
+			String output = question.getText();
+			String expected = "Cpf: ";
+			assert(expected.equals(output)) : "CPF question is not valid";
+			answer = new UserMessage("82998289221");
+			controller.answer(answer);
+						
 		}
 
 		System.out.println("OK");

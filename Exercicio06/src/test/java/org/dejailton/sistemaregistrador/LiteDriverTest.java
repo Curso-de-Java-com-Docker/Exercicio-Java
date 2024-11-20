@@ -4,7 +4,7 @@ import org.dejailton.sistemaregistrador.LiteDriver;
 import org.dejailton.sistemaregistrador.Patient;
 
 public class LiteDriverTest {
-	public void run () {
+	public static void test () {
 		System.out.print("test 3 \t LiteDriverTest...\t");
 		String name = "James";
 		String cpf = "12312312300";

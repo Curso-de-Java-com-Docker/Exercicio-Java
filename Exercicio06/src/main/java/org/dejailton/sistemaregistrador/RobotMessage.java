@@ -1,29 +1,33 @@
 package org.dejailton.sistemaregistrador;
 
-class Question {
+class RobotMessage {
 	private String text;
 	private String type;
 
-	public Question (String text, String type) {
+	public RobotMessage (String text, String type) {
 		this.text = text;
 		this.type = type;
 	}
-	public Question (String text) {
+
+	public RobotMessage (String text) {
 		this.text = text;
 	}
-	public Question(Question question) {
+
+	public RobotMessage  () {
 	}
-	public Question () {
-	}
+
 	public String getText() {
 		return text;
 	}
+
 	public void setText(String text) {
 		this.text = text;
 	}
+
 	public String getType() {
 		return type;
 	}
+
 	public void setType(String type) {
 		this.type = type;
 	}

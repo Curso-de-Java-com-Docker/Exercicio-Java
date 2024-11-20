@@ -10,14 +10,16 @@ public class Client {
 		this.cpf = cpf;
 		this.bornYear = bornYear;
 	}
-	public String getName() {
+	
+	public String getName () {
 		return this.name;
 	}
-	public String getCpf() {
+
+	public String getCpf () {
 		return this.cpf;
 	}
-	public int getYear() {
+	
+	public int getYear () {
 		return this.bornYear;
 	}
 }
-

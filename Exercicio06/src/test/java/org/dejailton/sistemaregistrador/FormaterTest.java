@@ -5,7 +5,7 @@ import org.dejailton.sistemaregistrador.Patient;
 
 class FormaterTest {
 	public static void test() {
-		System.out.print("test 3 \t Formater...\t");
+		System.out.print("test 4444 \t Formater...\t");
 		{
 			String expected = "Welcome to sistemaregistrador!";
 			String output = Formater.WELCOME;
