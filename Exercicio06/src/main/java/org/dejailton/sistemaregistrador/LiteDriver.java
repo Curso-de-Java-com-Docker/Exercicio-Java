@@ -10,6 +10,7 @@ import java.sql.Statement;
 public class LiteDriver {
 	public static boolean registerPatient(Patient patient) {
 		boolean success = false;
+		ClassForname
 		Connection connection = null;
 		try {
 			connection = DriverManager.getConnection("jdbc:sqlite:meubanco.db");
