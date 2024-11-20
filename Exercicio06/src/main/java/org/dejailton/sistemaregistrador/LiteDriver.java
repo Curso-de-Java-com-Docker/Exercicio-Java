@@ -12,7 +12,7 @@ public class LiteDriver {
 		boolean success = false;
 		Connection connection = null;
 		try {
-			connection = DriverManager.getConnection("jdbc:sqlite:location=meubanco.db");
+			connection = DriverManager.getConnection("jdbc:sqlite:meubanco.db");
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30);
 
