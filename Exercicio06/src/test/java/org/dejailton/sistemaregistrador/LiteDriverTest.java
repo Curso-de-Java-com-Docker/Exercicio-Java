@@ -13,7 +13,7 @@ public class LiteDriverTest {
 		Patient patient = new Patient(name, cpf, birthdate, gender);
 		{	
 			if(LiteDriver.registerPatient(patient)) {
-				System.out.println("Register Operetion sucess");
+				System.out.println("Register Operation sucess");
 			} else {
 				System.out.println("Register Operation Gone Wrong");
 			}
