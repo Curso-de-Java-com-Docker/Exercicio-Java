@@ -64,25 +64,32 @@ public class LiteDriver {
 		return connection;
 	}
 
-	public static Patient getPatientByCpf(String cpf) {
+	public static Patient getPatientByCpf (String cpf) {
 		String queryString = getQueryString(cpf);
-		executeQuery(queryString);
+		ResultSet result = executeQuery(queryString);
+		Patient patient = resultToPatient(result);
+		return patient;
 	}
 
-	private static Patient getQueryString (String cpf) {
+	private static String getQueryString (String cpf) {
+		String queryString;
+		// poe a logica aqui
+		queryString = "";
+	}
+
+	private static ResultSet executeQuery (String sqlString) {
 		ensureTable();
 		try (Connection connection = getConnection()) {
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30);
-			Result result = statement.executeQuery(sqlString);
-			Patient patient = resultToPatient(result);
-			return patient;
+			ResultSet result = statement.executeQuery(sqlString);
+			return result;
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}
 	}
 
-	private static Patient resultToPatient (Result result) {
+	private static Patient resultToPatient (ResultSet result) {
 		if (patientReturnSet.getFetchSize() > 1) {
 			throw new Exception("Expected an unique result for cpf, but got multiple");
 		} else if (patientReturnSet.getFetchSize() < 1) {
