@@ -9,8 +9,6 @@ import java.sql.Statement;
 
 public class LiteDriver {
 	public static boolean registerPatient(Patient patient) {
-		Patient patientRegister = patient;
-		boolean success = false;
 		Connection connection = null;
 		try {
 			
@@ -23,9 +21,11 @@ public class LiteDriver {
 			connection = DriverManager.getConnection("jdbc:sqlite:meubanco.db");
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30);
-			
-			statement.executeUpdate("CREATE TABLE patienttable(name STRING, cpf STRING, birthdate STRING, gender CHAR)");
-			statement.executeUpdate("INSERT INTO patienttable (name, cpf, birthdate, gender) VALUES (name1, cpf1, birthDate1, gender1)");
+			String createTable = "CREATE TABLE patienttable(name STRING, cpf STRING, birthdate STRING, gender CHAR";
+			statement.executeUpdate(createTable);
+			String Insert = "INSERT INTO patienttable VALUES(patient.getName(), patient.getCpf(), patient.getBirthDate(), patient.getGender()";
+			statement.executeUpdate();
+			success = true;
 		} catch(SQLException e) {
 			System.err.println(e.getMessage());
 			success = false;
