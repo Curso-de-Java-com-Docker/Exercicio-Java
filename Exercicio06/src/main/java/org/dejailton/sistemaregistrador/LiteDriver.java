@@ -64,12 +64,12 @@ public class LiteDriver {
 		return connection;
 	}
 
-	public static Patient getPatientByCpf(String wrongCpf) {
-		String queryString(cpf);
+	public static Patient getPatientByCpf(String cpf) {
+		String queryString = getQueryString(cpf);
 		executeQuery(queryString);
 	}
 
-	private static Patient queryString (String cpf) {
+	private static Patient getQueryString (String cpf) {
 		ensureTable();
 		try (Connection connection = getConnection()) {
 			Statement statement = connection.createStatement();
